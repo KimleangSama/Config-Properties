@@ -1,0 +1,6 @@
+queue.order-placed:
+  name: order-placed
+  exchange-name: order-placed-exchange
+  routing-key: order-placed-routing-key
+  durable: true
+  auto-delete: false
