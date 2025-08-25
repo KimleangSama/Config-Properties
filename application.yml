@@ -1,0 +1,30 @@
+management:
+  endpoints:
+    web:
+      exposure:
+        include: info, health, prometheus, metrics
+  zipkin:
+    tracing:
+      endpoint: ${ZIPKIN_TRACING_ENDPOINT:"http://localhost:9411/api/v2/spans"}
+  endpoint:
+    health:
+      show-details: always
+  metrics:
+    distribution:
+      percentiles-histogram:
+        http:
+          server:
+            requests: true
+  tracing:
+    sampling:
+      probability: 1.0
+    enabled: true
+
+logging:
+  pattern:
+    correlation: '[${spring.application.name:},%X{traceId:-},%X{spanId:-}] '
+  level:
+    com.keakimleang.configserver: TRACE
+    com.github.loki4j: DEBUG
+
+logging.loki.url: ${LOKI_URL:http://localhost:3100/loki/api/v1/push}
