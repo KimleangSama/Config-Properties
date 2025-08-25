@@ -38,3 +38,10 @@ services.uris:
 
 
 logging.loki.url: ${LOKI_ENDPOINT:http://localhost:3100/loki/api/v1/push}
+
+spring:
+  rabbitmq:
+    host: ${RABBITMQ_HOST:localhost}
+    port: ${RABBITMQ_PORT:5672}
+    username: ${RABBITMQ_USERNAME:rabbitmq}
+    password: ${RABBITMQ_PASSWORD:rabbitmq}
