@@ -29,8 +29,9 @@ logging:
 
 # Eureka Client Configuration
 services.uris:
-  - product-service=${PRODUCT_SERVICE_URI:http://localhost:8081}
-  - order-service=${ORDER_SERVICE_URI:http://localhost:8082}
-  - inventory-service=${INVENTORY_SERVICE_URI:http://localhost:8083}
+  product-service: ${PRODUCT_SERVICE_URI:http://localhost:8081}
+  order-service: ${ORDER_SERVICE_URI:http://localhost:8082}
+  inventory-service: ${INVENTORY_SERVICE_URI:http://localhost:8083}
+
 
 logging.loki.url: ${LOKI_ENDPOINT:http://localhost:3100/loki/api/v1/push}
