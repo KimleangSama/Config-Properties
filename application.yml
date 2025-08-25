@@ -27,4 +27,4 @@ logging:
     com.keakimleang.configserver: TRACE
     com.github.loki4j: DEBUG
 
-logging.loki.url: ${LOKI_URL:http://localhost:3100/loki/api/v1/push}
+logging.loki.url: ${LOKI_ENDPOINT:http://localhost:3100/loki/api/v1/push}
